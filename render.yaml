@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: onlinebookstore
+    env: php
+    buildCommand: composer install
+    startCommand: heroku-php-apache2
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: onlinebookstore-db
+          property: host
+      - key: DB_DATABASE
+        fromDatabase:
+          name: onlinebookstore-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: onlinebookstore-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: onlinebookstore-db
+          property: password
+
+databases:
+  - name: onlinebookstore-db
+    plan: starter
