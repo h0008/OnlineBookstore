@@ -1,0 +1,297 @@
+/* Header Styles */
+
+/* Top bar */
+.top-nav {
+  background-color: var(--light);
+  padding: var(--space-xs) 0;
+  font-size: 0.875rem;
+}
+
+.top-nav .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.user-links a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.user-links a:hover {
+  color: var(--primary-color);
+}
+
+.separator {
+  color: var(--medium);
+}
+
+/* Main header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  margin-right: var(--space-sm);
+}
+
+.logo h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--secondary-dark);
+  margin-bottom: 0;
+  font-family: 'Stick No Bills', sans-serif;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link img {
+  transition: transform 0.2s ease;
+}
+
+.logo-link:hover img {
+  transform: scale(1.05);
+}
+
+/* Search form */
+.form-search {
+  display: flex;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-search input {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  outline: none;
+}
+
+.form-search button {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  cursor: pointer;
+}
+
+.form-search button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Main navigation menu */
+.menu {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: var(--space-md) var(--space-lg);
+  transition: background-color 0.2s;
+}
+
+.menu li a:hover, .menu li a:focus {
+  background-color: var(--secondary-light);
+  color: white;
+}
+
+.menu li a.active {
+  background-color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: var(--space-sm);
+  cursor: pointer;
+}
+
+/* Hero banner */
+.hero-banner {
+  background-image: url('../images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  max-width: 600px;
+  padding: var(--space-md);
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+  color: white;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-content .btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.hero-content .btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Section headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--light);
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.view-all {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adaptations */
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    padding: var(--space-sm);
+  }
+  
+  .logo {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .form-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .menu ul {
+    flex-direction: column;
+    display: none;
+  }
+  
+  .menu.open ul {
+    display: flex;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .user-links {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .top-nav .container {
+    justify-content: center;
+  }
+  
+  .hero-banner {
+    height: 300px;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+}

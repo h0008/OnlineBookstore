@@ -1,0 +1,26 @@
+-# PHP project specific
+/vendor/
+/node_modules/
+composer.lock
+
+# Database configuration
+connect.php
+
+# User uploads and generated content
+/images/qrcodes/
+/images/uploads/
+
+# Environment files
+.env
+.env.local
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Windows specific
+Thumbs.db
+desktop.ini
+
+# System files
+.DS_Store

@@ -1,0 +1,246 @@
+/* Navigation Components */
+
+/* Main Navigation */
+.menu {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: var(--space-md) var(--space-lg);
+  transition: background-color 0.2s;
+}
+
+.menu li a:hover, .menu li a:focus {
+  background-color: var(--secondary-light);
+  color: white;
+}
+
+.menu li a.active {
+  background-color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Dropdown Menus */
+.menu .dropdown {
+  position: relative;
+}
+
+.menu .dropdown-toggle::after {
+  content: '';
+  display: inline-block;
+  margin-left: 0.5em;
+  vertical-align: 0.255em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.menu .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  background-color: white;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.menu .dropdown:hover .dropdown-menu,
+.menu .dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.menu .dropdown-menu a {
+  color: var(--dark);
+  padding: var(--space-sm) var(--space-md);
+  white-space: nowrap;
+}
+
+.menu .dropdown-menu a:hover {
+  background-color: var(--light);
+  color: var(--primary-color);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--space-sm);
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  margin-bottom: var(--space-lg);
+  font-size: 0.875rem;
+  color: var(--medium);
+}
+
+.breadcrumbs a {
+  color: var(--medium);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Top Navigation */
+.top-nav {
+  background-color: var(--light);
+  padding: var(--space-xs) 0;
+  font-size: 0.875rem;
+}
+
+.top-nav .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.user-links a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.user-links a:hover {
+  color: var(--primary-color);
+}
+
+.separator {
+  color: var(--medium);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin: var(--space-lg) 0;
+}
+
+.page-link {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--light);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.page-link:hover {
+  background-color: var(--light);
+  text-decoration: none;
+}
+
+.page-link.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.ellipsis {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-xs);
+  color: var(--medium);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--light);
+  margin-bottom: var(--space-lg);
+}
+
+.tab-link {
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: 2px solid transparent;
+  color: var(--medium);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tab-link:hover {
+  color: var(--primary-color);
+}
+
+.tab-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Responsive adaptations */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .menu ul {
+    flex-direction: column;
+    display: none;
+  }
+  
+  .menu.open ul {
+    display: flex;
+  }
+  
+  .menu .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    padding-left: var(--space-lg);
+    background-color: var(--secondary-light);
+    border-radius: 0;
+  }
+  
+  .menu .dropdown-menu a {
+    color: white;
+  }
+  
+  .tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-link {
+    flex: 1;
+    text-align: center;
+    padding: var(--space-sm);
+  }
+}
