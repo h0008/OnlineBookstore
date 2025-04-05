@@ -1,9 +1,9 @@
 services:
   - type: web
     name: onlinebookstore
-    env: php
-    buildCommand: composer install
-    startCommand: heroku-php-apache2
+    env: docker
+    buildCommand: docker build -t onlinebookstore .
+    startCommand: docker run -p $PORT:80 onlinebookstore
     envVars:
       - key: DB_HOST
         fromDatabase:
