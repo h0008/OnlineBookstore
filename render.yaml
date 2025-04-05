@@ -2,8 +2,8 @@ services:
   - type: web
     name: onlinebookstore
     env: docker
-    buildCommand: docker build -t onlinebookstore .
-    startCommand: docker run -p $PORT:80 onlinebookstore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /php/homepage.php
     envVars:
       - key: DB_HOST
         fromDatabase:
@@ -21,7 +21,10 @@ services:
         fromDatabase:
           name: onlinebookstore-db
           property: password
+      - key: RENDER
+        value: "true"
 
 databases:
   - name: onlinebookstore-db
-    plan: starter
+
+    plan: starter    plan: starter
