@@ -26,5 +26,4 @@ services:
 
 databases:
   - name: onlinebookstore-db
-
-    plan: starter    plan: starter
+    plan: starter
