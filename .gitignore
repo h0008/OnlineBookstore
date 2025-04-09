@@ -3,6 +3,8 @@
 /node_modules/
 composer.lock
 
+# Database configuration
+connect.php
 
 # User uploads and generated content
 /images/qrcodes/
